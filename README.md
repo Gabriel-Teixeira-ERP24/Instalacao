@@ -25,15 +25,15 @@
 > **gerais** e sem partições.
 > **Este passo requer que esteja [conectado](#conectar-ao-servidor) ao servidor**
 
-Para verificar o espaço do disco do servidor é necessário executar o comando `df -h`
-É também possível ver os discos montados e os tipos com o comando `lsblk`
-Para verificar o espaço que uma pasta ocupa existe o comando: `du -sh {DIRETORIO}`
+Para verificar o espaço do disco do servidor é necessário executar o comando ```df -h```
+É também possível ver os discos montados e os tipos com o comando ```lsblk```
+Para verificar o espaço que uma pasta ocupa existe o comando: ```du -sh {DIRETORIO}```
 
 <br>
 
 ### Listagem/descrição de comandos
 
-| ``df -h`` | ``lsblk``| ``du -sh {DIRETORIO}`` |
+| ``````df -h`````` | ``````lsblk``````| ``````du -sh {DIRETORIO}`````` |
 |--|--|--|
 | Lista as partições e o espaço ocupado por cada | Lista as partições em hierarquia e o tipo de disco da partição | Verifica o espaço usado por um diretório|
 
@@ -56,7 +56,7 @@ Para verificar o espaço que uma pasta ocupa existe o comando: `du -sh {DIRETORI
 	
 Para conectar ao servidor é necessário abrir o `cmd`. Para tal pode apenas pesquisar pelo `cmd` no menu inicio do windows ou usar `Windows + R` e digitar `cmd` e carregar na tecla `Enter`.
 
-Após ter o `cmd` aberto digite o comando `ssh {CONTA}@{IP}`.
+Após ter o `cmd` aberto digite o comando ```ssh {CONTA}@{IP}```.
 
 > Normalmente a conta é root
 
@@ -66,7 +66,7 @@ Substitua a conta e o ip pelas que foram indicadas pelo cliente.
 ### Outra porta
 
 > Por predefinição o ssh tenta conectar na porta 22, se for necessário outra porta
-> pode usar o comando adicional `ssh {CONTA}@{IP} -p {PORTA}`
+> pode usar o comando adicional ```ssh {CONTA}@{IP} -p {PORTA}```
 
 <br>
 	
@@ -78,25 +78,25 @@ Substitua a conta e o ip pelas que foram indicadas pelo cliente.
 
 Após servidor numa conta com privilégios máximos realize a seguinte ordem de comandos:
 
-1. **Para garantir compatibilidade execute o comando:** `yum install wget -y`
+1. **Para garantir compatibilidade execute o comando:** ```yum install wget -y```
 
 2. De seguida deve buscar o repositório bitrix com o comando: 
-`wget http://repos.1c-bitrix.ru/yum/bitrix-env.sh`
+```wget http://repos.1c-bitrix.ru/yum/bitrix-env.sh```
 
 3. Após concluir o download do repositório use o seguinte comando para poder executar o ficheiro:
-`chmod +x bitrix-env.sh`
+```chmod +x bitrix-env.sh```
 
-4. De seguida execute o ficheiro com o comando: `./bitrix-env.sh`
+4. De seguida execute o ficheiro com o comando: ```./bitrix-env.sh```
 
 > **Nota:** Este passo requer algum tempo
 
-5. Após concluir este passo é necessário dar reboot ao servidor com o comando: `reboot`
+5. Após concluir este passo é necessário dar reboot ao servidor com o comando: ```reboot```
 
 > **Outra nota:** A sua conexão irá abaixo, mas isso é esperado
 
-6. De seguida [conecte](#conectar-ao-servidor) novamente ao servidor e execute o seguinte comando outra vez: `./bitrix-env.sh`
+6. De seguida [conecte](#conectar-ao-servidor) novamente ao servidor e execute o seguinte comando outra vez: ```./bitrix-env.sh```
 
-7. Após concluido dê novamente `reboot` ao servidor.
+7. Após concluido dê novamente ```reboot``` ao servidor.
 
 <br>
 
@@ -111,8 +111,8 @@ Se tem o dominio obtenha o certificado **HTTPS** `"Let's encrypt"`
 
 Para tal é necessário estar no modo **virtual appliance** da bitrix ou também conhecido como o menu inicial que aparece.
 
-> Se não estiver no menu é possível aceder ao menu com o comando `/root/menu.sh`
-> ou `./menu.sh`
+> Se não estiver no menu é possível aceder ao menu com o comando ```/root/menu.sh```
+> ou ```./menu.sh```
 
 <br>
 
@@ -190,7 +190,7 @@ Ao averiguar que corresponde tudo aos requisitos do cliente clique em `Next`
 
 > Este passo é opcional, mas é recomendado para facilitar a edição de ficheiros
 
-Para instalar o nano use o comando: `yum install nano -y`
+Para instalar o nano use o comando: ```yum install nano -y```
 
 <br>
 
@@ -198,7 +198,7 @@ Para instalar o nano use o comando: `yum install nano -y`
 
 > NOTA: deve substituir tudo o que está entre chaves `{}` pelas informações que o cliente lhe deu
 
-Após ter o nano instalado use o comando: `/etc/msmtprc`
+Após ter o nano instalado use o comando: ```nano /etc/msmtprc```
 
 No editor nano digite o seguinte:
 
