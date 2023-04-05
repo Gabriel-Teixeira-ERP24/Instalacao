@@ -46,6 +46,7 @@ Para verificar o espaço que uma pasta ocupa existe o comando: `du -sh {DIRETORI
  1. [Conectar ao servidor](#conectar-ao-servidor)
  2. [Instalar bitrix - servidor](#instalar-bitrix24-parte-1---servidor) 
  3. [Instalar bitrix - web](#instalar-bitrix24-parte-2---web)
+ 4. [Instalar smtp](#instalar-smtp)
 
 <br>
 
@@ -174,3 +175,45 @@ Ao averiguar que corresponde tudo aos requisitos do cliente clique em `Next`
 ### Instalação de sistema
 
 ### Criar conta de administrador
+
+
+# Instalar SMTP
+
+> Esta secção só deve ser seguida se conectou ao servidor com sucesso.
+
+1. [Instalar nano](#instalar-nano)
+2. [Editar ficheiro de configuração](#editar-ficheiro-de-configuração)
+
+<br>
+
+## Instalar nano
+
+> Este passo é opcional, mas é recomendado para facilitar a edição de ficheiros
+
+Para instalar o nano use o comando: `yum install nano -y`
+
+<br>
+
+## Editar ficheiro de configuração
+
+> NOTA: deve substituir tudo o que está entre chaves `{}` pelas informações que o cliente lhe deu
+
+Após ter o nano instalado use o comando: `/etc/msmtprc`
+
+No editor nano digite o seguinte:
+
+```
+# smtp account configuration for default
+account default
+logfile /home/bitrix/msmtp_default.log
+host {HOST}
+port 465
+auth on
+user {USER}
+password {PASSWORD}
+from {USER|FROM}
+keepbcc off
+tls on
+tls_certcheck off
+tls_starttls off
+```
